@@ -1,15 +1,15 @@
-<view class="cu-bar tabbar bg-white foot">
-  <view class="action text-green">
-    <view class="cuIcon-homefill"></view> 首页
-  </view>
-  <view class="action text-gray add-action">
-    <button class="cu-btn cuIcon-add bg-green shadow"></button>
-    发布
-  </view>
-  <view class="action text-gray">
-    <view class="cuIcon-my">
-      <view class="cu-tag"></view>
+<!--index.wxml-->
+
+<view class="container">
+  <view class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="auth" bindtap="myopenid" wx:if="{{needauth}}"> 授权登录 </button>
+    <view>
+    {{str_openid}}
     </view>
-    我的
+    <block wx-else >
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
   </view>
+
 </view>
